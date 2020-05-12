@@ -4,7 +4,6 @@
     "type": "project",
     "autoload": {
         "psr-4": {
-           "AppBundle\\": "src/AppBundle",
 		   "App\\": "src/"
         },
         "classmap": [
@@ -14,25 +13,26 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\AppBundle\\": "tests/AppBundle",
 			"App\\Tests\\": "tests/"
         }
     },
     "require": {
         "php": ">=5.5.9",
+        "doctrine/doctrine-bundle": "^1.6",
+        "doctrine/doctrine-cache-bundle": "^1.2",
+        "doctrine/orm": "^2.5",
+        "sensio/framework-extra-bundle": "^3.0.2",
+        "symfony/asset": "^4.0",
         "symfony/console": "^4.0",
         "symfony/flex": "^1.6",
         "symfony/framework-bundle": "^4.0",
         "symfony/lts": "^4@dev",
-        "symfony/yaml": "^4.0",
-        "doctrine/orm": "^2.5",
-        "doctrine/doctrine-bundle": "^1.6",
-        "doctrine/doctrine-cache-bundle": "^1.2",
-        "symfony/swiftmailer-bundle": "^3.2",
         "symfony/monolog-bundle": "^3.5",
         "symfony/polyfill-apcu": "^1.0",
-        "sensio/framework-extra-bundle": "^3.0.2"
-        
+        "symfony/profiler-pack": "^1.0",
+        "symfony/swiftmailer-bundle": "^3.2",
+        "symfony/twig-pack": "^1.0",
+        "symfony/yaml": "^4.0"
     },
     "require-dev": {
         "symfony/dotenv": "^4.0",
