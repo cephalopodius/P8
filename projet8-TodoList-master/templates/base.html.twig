@@ -31,6 +31,9 @@
                     <a class="navbar-brand" href="#">To Do List app</a>
 
                     <img src="{{ asset('img/Logo_OpenClassrooms.png') }}" alt="OpenClassrooms" />
+                    {% if is_granted("ROLE_USER") %}
+                        Bonjour {{ app.user.username }}
+                    {% endif %}
                 </div>
             </div>
         </nav>
@@ -41,6 +44,10 @@
                 <a href="{{ path('user_create') }}" class="btn btn-primary">Créer un utilisateur</a>
 
                 {% if app.user %}
+
+                  {% if is_granted('ROLE_ADMIN') %}
+                    <a href="{{ path('user_list') }}" class="btn btn-primary">Editer un utilisateur</a>
+                    {% endif %}
                 <a href="{{ path('logout') }}" class="pull-right btn btn-danger">Se déconnecter</a>
                 {% endif %}
 
