@@ -32,7 +32,7 @@ class UserTest extends WebTestCase
     public function testGetSetEmail()
     {
         $user = new User();
-        $user->setEmail('Test@email.com');
+        $user->setEmail('Test@test.com');
         static::assertEquals($user->getEmail(), 'Test@test.com');
     }
 

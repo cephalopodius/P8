@@ -19,7 +19,7 @@ class SecurityControllerTest extends WebTestCase
         static::assertSame(1, $crawler->filter('input[name="_password"]')->count());
 
         $form = $crawler->selectButton('Se connecter')->form();
-        $form['_username'] = 'user';
+        $form['_username'] = 'admin';
         $form['_password'] = 'test';
         $client->submit($form);
 
