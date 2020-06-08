@@ -3,7 +3,7 @@
 namespace App\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;;
-
+use Symfony\Component\HttpFoundation\Response;
 
 class SecurityControllerTest extends WebTestCase
 {
@@ -23,11 +23,7 @@ class SecurityControllerTest extends WebTestCase
         $form['_password'] = 'test';
         $client->submit($form);
 
-        $crawler = $client->followRedirect();
-        static::assertSame(200, $client->getResponse()->getStatusCode());
-
-        // Test if home page text when authenticated exists
-        static::assertSame("Bienvenue sur Todo List, l'application vous permettant de gérer l'ensemble de vos tâches sans effort !", $crawler->filter('h1')->text());
+        $this->assertResponseRedirects();
 
         // Return the client to reuse the authenticated user it in others functionnal tests
         return $client;

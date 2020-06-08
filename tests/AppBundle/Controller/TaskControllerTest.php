@@ -19,8 +19,8 @@ class TaskControllerTest extends WebTestCase
         static::assertSame(200, $client->getResponse()->getStatusCode());
 
         // Test if login field exists
-        static::assertSame(1, $crawler->filter('input[name="username"]')->count());
-        static::assertSame(1, $crawler->filter('input[name="password"]')->count());
+        static::assertSame(1, $crawler->filter('input[name="_username"]')->count());
+        static::assertSame(1, $crawler->filter('input[name="_password"]')->count());
     }
 
     public function testListAction()
