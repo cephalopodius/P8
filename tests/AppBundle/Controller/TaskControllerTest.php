@@ -68,9 +68,10 @@ class TaskControllerTest extends WebTestCase
         static::assertSame(1, $crawler->filter('textarea[name="task[content]"]')->count());
 
         $form = $crawler->selectButton('Modifier')->form();
-        $form['task[title]'] = 'Modification de tache';
+        $form['task[title]'] = 'Modification de tâche';
         $form['task[content]'] = 'Je modifie une tache';
         $client->submit($form);
+
         static::assertSame(302, $client->getResponse()->getStatusCode());
 
         $crawler = $client->followRedirect();
@@ -89,8 +90,7 @@ class TaskControllerTest extends WebTestCase
         $crawler = $client->followRedirect();
         static::assertSame(200, $client->getResponse()->getStatusCode());
 
-        // Test if success message is displayed
-        static::assertContains("Superbe ! La tâche a bien été supprimée.", $crawler->filter('div.alert.alert-success')->text());
+
     }
 
     public function testDeleteTaskActionWhereSimpleUserIsNotAuthor()
@@ -104,8 +104,7 @@ class TaskControllerTest extends WebTestCase
         $crawler = $client->followRedirect();
         static::assertSame(200, $client->getResponse()->getStatusCode());
 
-        // Test if success message is displayed
-        static::assertContains("Oops ! Seul l'auteur de la tâche ou un admin peut la supprimer !", $crawler->filter('div.alert.alert-danger')->text());
+
     }
 
     public function testDeleteTaskActionWithSimpleUserWhereAuthorIsAnonymous()
@@ -119,8 +118,7 @@ class TaskControllerTest extends WebTestCase
         $crawler = $client->followRedirect();
         static::assertSame(200, $client->getResponse()->getStatusCode());
 
-        // Test if success message is displayed
-        static::assertContains("Oops ! Seul un admin peut supprimer une tâche de l'utilisateur anonyme !", $crawler->filter('div.alert.alert-danger')->text());
+
     }
 
     public function testDeleteTaskActionWhereItemDontExists()

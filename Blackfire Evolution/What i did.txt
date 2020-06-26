@@ -1,0 +1,6 @@
+To improve time performance :
+I put the project in prod:
+-deleted vendor folder, then composer install --classmap -authoritative
+In php.ini
+-Desactivated Xdebug
+-Activated Opcache

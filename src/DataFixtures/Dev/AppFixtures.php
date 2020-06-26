@@ -29,7 +29,7 @@ class AppFixtures extends Fixture implements FixtureGroupInterface
 
    public function load(ObjectManager $manager)
    {
-         // Admin User
+         // Admin 
          $user = new User();
          $user->setUsername('admin')
               ->setEmail('boss@boss.fr')
@@ -64,6 +64,23 @@ class AppFixtures extends Fixture implements FixtureGroupInterface
               ->setUser($this->getReference('admin'))
          ;
          $manager->persist($task);
+
+         // Task created by simple user
+         $task = new Task();
+         $task->setTitle('Tâche 3')
+              ->setContent('Tâche crée par un user')
+              ->setUser($this->getReference('user'))
+         ;
+         $manager->persist($task);
+
+         // Task created by admin
+         $task = new Task();
+         $task->setTitle('Tâche 4')
+              ->setContent('Tâche crée par un admin')
+              ->setUser($this->getReference('admin'))
+         ;
+         $manager->persist($task);
+
 
          $manager->flush();
    }
