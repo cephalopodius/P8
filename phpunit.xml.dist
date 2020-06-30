@@ -24,7 +24,12 @@
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">src</directory>
+			<exclude>
+				<directory suffix=".php">./Datafixtures</directory>
+				<file>AppFixtures.php</file>
+			</exclude>
         </whitelist>
+
     </filter>
 
     <listeners>

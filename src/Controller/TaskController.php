@@ -90,11 +90,19 @@ class TaskController extends AbstractController
      */
     public function deleteTaskAction(Task $task)
     {
-        $em = $this->getDoctrine()->getManager();
-        $em->remove($task);
-        $em->flush();
 
-        $this->addFlash('success', 'La tâche a bien été supprimée.');
+
+        if($task->getUser() == $this->getUser() || $this->getRole()== 'ROLE_ADMIN' ){
+
+          $em = $this->getDoctrine()->getManager();
+          $em->remove($task);
+          $em->flush();
+
+          $this->addFlash('success', 'La tâche a bien été supprimée.');
+        }else{
+              $this->addFlash('success', 'Nice try');
+          }
+
 
         return $this->redirectToRoute('task_list');
     }
