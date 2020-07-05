@@ -14,7 +14,7 @@ class DefaultControllerTest extends WebTestCase
     {
         // If the user isn't logged, should redirect to the login page
         $client = static::createClient();
-        $client->request('GET', '/');
+        $client->request('GET', '/tasks');
         static::assertSame(302, $client->getResponse()->getStatusCode());
 
         $crawler = $client->followRedirect();

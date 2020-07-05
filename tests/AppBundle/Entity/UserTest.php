@@ -65,13 +65,13 @@ class UserTest extends WebTestCase
         static::assertInstanceOf(User::class, $user->removeTask(new Task()));
     }
 
-  /*  public function testGetSetRoles()
+    public function testGetSetRoles()
     {
         $user = new User();
-        $user->setRoles(['ROLE_ADMIN']);
-        static::assertEquals($user->getRoles(), ['ROLE_ADMIN', 'ROLE_USER']);
+        $user->setRoles(["ROLE_ADMIN"]);
+        static::assertEquals($user->getRoles(), ["ROLE_ADMIN"]);
     }
-*/
+
     public function testEraseCredentials()
     {
         $user = new User();

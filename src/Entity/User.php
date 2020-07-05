@@ -148,7 +148,9 @@ class User implements UserInterface
 
         return $this;
     }
-
+    /**
+     * @codeCoverageIgnore
+     */
     public function __toString()
         {
             return $this->username;
