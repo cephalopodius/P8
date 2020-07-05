@@ -22,11 +22,12 @@
     </testsuites>
 
     <filter>
-        <whitelist processUncoveredFilesFromWhitelist="true">
+        <whitelist>
             <directory suffix=".php">src</directory>
 			<exclude>
-				<directory suffix=".php">./Datafixtures</directory>
-				<file>AppFixtures.php</file>
+				<directory suffix=".php">src/DataFixtures/</directory>
+				<file>src/DataFixtures/AppFixtures.php</file>
+        <directory suffix=".php">src/Migrations/</directory>
 			</exclude>
         </whitelist>
 

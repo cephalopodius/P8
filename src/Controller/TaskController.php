@@ -8,7 +8,8 @@ use App\Form\TaskType;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
-
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 class TaskController extends AbstractController
 {
@@ -24,6 +25,7 @@ class TaskController extends AbstractController
 
     /**
      * @Route("/tasks/create", name="task_create")
+     * @Security("is_granted('ROLE_USER')")
      */
     public function createAction(Request $request)
     {
@@ -51,6 +53,7 @@ class TaskController extends AbstractController
 
     /**
      * @Route("/tasks/{id}/edit", name="task_edit")
+     * @Security("is_granted('ROLE_USER')")
      */
     public function editAction(Task $task, Request $request)
     {
@@ -74,6 +77,7 @@ class TaskController extends AbstractController
 
     /**
      * @Route("/tasks/{id}/toggle", name="task_toggle")
+     * @Security("is_granted('ROLE_USER')")
      */
     public function toggleTaskAction(Task $task)
     {
@@ -87,12 +91,12 @@ class TaskController extends AbstractController
 
     /**
      * @Route("/tasks/{id}/delete", name="task_delete")
+     * @Security("is_granted('ROLE_USER')")
      */
-    public function deleteTaskAction(Task $task)
+    public function deleteTaskAction(Task $task )
     {
 
-
-        if($task->getUser() == $this->getUser() || $this->getRole()== 'ROLE_ADMIN' ){
+        if($task->getUser() == $this->getUser() || $this->getUser()->getRoles()== ["ROLE_ADMIN"] ){
 
           $em = $this->getDoctrine()->getManager();
           $em->remove($task);
@@ -102,7 +106,6 @@ class TaskController extends AbstractController
         }else{
               $this->addFlash('success', 'Nice try');
           }
-
 
         return $this->redirectToRoute('task_list');
     }
