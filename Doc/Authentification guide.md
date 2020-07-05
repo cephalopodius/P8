@@ -20,8 +20,7 @@ providers:
         doctrine:
           entity:
               class: App:User
-              property: username
-			  
+              property: username			  
 ```
 
 A firewall is set to prevent stranger to acces some website's part. To be authentificated, we use a form, wich we can access by the login route
@@ -48,7 +47,7 @@ The stranger can access to this route by the access_control parameter. It is her
 ```yaml
   access_control:
          - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-	     - { path: ^/tasks, roles: ROLE_USER }
+	 - { path: ^/tasks, roles: ROLE_USER }
          - { path: ^/users, roles: ROLE_ADMIN }
 ```
 
