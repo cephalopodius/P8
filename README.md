@@ -1,19 +1,21 @@
-ToDoList
+# ToDoList
 ========
 
 Base du projet #8 : Améliorez un projet existant
 
 https://openclassrooms.com/projects/ameliorer-un-projet-existant-1
 
-Installation
+## Installation
 
-	clone or downbload the project at the following url :
+1. Clone or download the project at the following url :
 
-    git clone https://github.com/cephalopodius/P8
+```bash
+$ git clone https://github.com/cephalopodius/P8
+```
 
-    Change the .env file and put your database information
+2. Change the .env file and put your database information
 
-    Install dependencies with composer install command
+3. Install dependencies with composer install command
 
     Create the database with the following command :
 
