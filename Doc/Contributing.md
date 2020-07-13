@@ -21,4 +21,7 @@ Standards
     PSR-4: Autoloading Standard
     Symfony Coding Standards
 
+Here a link if you don't know what PSR is.
+https://www.thinktocode.com/2017/08/20/what-is-psr/
+
 Thank for your contribution.
