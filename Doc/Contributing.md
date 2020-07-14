@@ -13,6 +13,9 @@ Open a Pull Request
 
     Submit your pull request
     Wait the lead dev to merge the Pull request
+    
+Here is a link if you are not fluent with pull request
+https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests
 
 Standards 
 
@@ -21,7 +24,7 @@ Standards
     PSR-4: Autoloading Standard
     Symfony Coding Standards
 
-Here a link if you don't know what PSR is.
+Here is a link if you don't know what PSR is.
 https://www.thinktocode.com/2017/08/20/what-is-psr/
 
 Thank for your contribution.
