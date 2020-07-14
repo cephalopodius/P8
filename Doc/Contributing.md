@@ -1,13 +1,13 @@
 to contribute on this project
 Guide
-    Fork the repository.
-    Checkout master branch
-    Use README file to install.
-    Create and use a new branch for the update you are wordking on. 
-    Code the bugfix or the update.
-	Check your quality code witch code climate, it must resulat in an A score.
-    Add you test(functionnal and unit).This project have a testcoverage policy, wich have to reach atleast 70%.
-    Commit and push your code.
+    -Fork the repository.
+    -Checkout master branch
+    -Use README file to install.
+    -Create and use a new branch for the update you are wordking on. 
+    -Code the bugfix or the update.
+    -Check your quality code witch code climate, it must resulat in an A score.
+    -Add you test(functionnal and unit).This project have a testcoverage policy, wich have to reach atleast 70%.
+    -Commit and push your code.
 
 Open a Pull Request
 
